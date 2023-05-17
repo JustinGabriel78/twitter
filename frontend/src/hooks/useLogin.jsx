@@ -10,7 +10,6 @@ export const useLogin = () => {
     const login =  async(email, password) => {
         setIsLoading(true)
         setError(null)
-        console.log("Into login");
         try {
             const response = await axios.post('http://localhost:4000/api/user/login', {email, password });
             console.log(response.data.token); // handle successful response

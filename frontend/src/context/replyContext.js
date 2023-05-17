@@ -12,6 +12,11 @@ export const replysReducer = (state, action) => {
             return {
                 replys: [action.payload,...state.replys]
             }
+
+        case 'DELETE_REPLYS':
+            return {
+                replys: action.payload
+            }
         default:
             return state
     }

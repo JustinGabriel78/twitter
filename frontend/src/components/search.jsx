@@ -17,8 +17,6 @@ const Search = () => {
                 
             })
             if (response.data) {
-                console.log("🚀 ~ file: search.jsx:18 ~ fetchData ~ response:", response.data.data)
-                
                 setMainData(response.data.data)
             }
         } 
@@ -29,8 +27,6 @@ const Search = () => {
         const data = value&&mainData.filter(data => data.username.toLocaleLowerCase().includes(value))
         setFilteredData(data)
     },[value, mainData])
-
-    console.log("main: ",mainData)
     
 
 

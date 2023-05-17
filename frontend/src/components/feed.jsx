@@ -45,7 +45,6 @@ const Feed = () => {
         const formData = new FormData();
         formData.append("postContent", postContent)
         formData.append("image", image)
-        console.log("🚀 ~ file: feed.jsx:45 ~ handleSubmit ~ formData:", formData)
         
         try {
             const response = await axios.post('http://localhost:4000/api/post/post', formData, 
@@ -64,7 +63,6 @@ const Feed = () => {
         }
         setPostContent('');
         setImage('');
-        console.log("inputRef.current.value: ",inputRef.current.value)
         inputRef.current.value = ''
 
     }
@@ -87,7 +85,7 @@ const Feed = () => {
                     <form onSubmit={handleSubmit} className="h-36 border-b-2 ">
                         <input className="w-5/6 ml-9 mt-3 h-14 placeholder-gray-600 outline-none" type="text" placeholder="What's happening?" value={postContent} maxLength={65} onChange ={(e) => setPostContent(e.target.value)} />
                         <input className="ml-10 " ref={inputRef} onChange={(e) => setImage(e.target.files[0]) } type="file"/>
-                        <button className="border rounded-full bg-[#49a3e3] w-32 h-9 mx-3 mt-8 text-white" disabled={shouldDisableButton}>Tweet</button>
+                        {postContent ? <button className="border rounded-full bg-[#49a3e3] w-32 h-9 mx-3 mt-8 text-white"  disabled={shouldDisableButton}>Tweet</button>: <button className="border rounded-full bg-[#7bbff0] w-32 h-9 mx-3 mt-8 text-white"  disabled={shouldDisableButton}>Tweet</button>}
 
                     </form>
 

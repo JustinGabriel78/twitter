@@ -25,10 +25,6 @@ function App() {
               path="/signup"
               element={!user ? <Signup />: <Navigate to="/"/>  }
             />
-            <Route
-              path="/logout"
-              element={<Login />}
-            />
             <Route 
               path="/comments/:_id" 
               element={<AllComments />} 

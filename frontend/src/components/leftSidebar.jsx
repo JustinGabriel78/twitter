@@ -12,13 +12,14 @@ import verified from "../assets/twitter_verified-icon.svg"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {useLogout} from "../hooks/useLogout"
+import { useNavigate} from 'react-router-dom'
 
 
 
 
 const LeftSidebar =() => {
     const sidebarItems = [{icon: home, text:"Home"},{icon:explore, text:"Explore"},{icon:notification,text:"Notifications"},{icon:messages,text:"Messages"},{icon:bookmarks,text:"Bookmarks"},{icon:blueIcon,text:"Twitter Blue"},{icon:verified, text:"Verified Organiza..."},{icon:profile,text: "Profile" },{icon:more,text:"More"}]
-
+    const navigate = useNavigate();
     const[userData, setUserData] = useState('');
     const { logout } = useLogout();
 
@@ -39,6 +40,7 @@ const LeftSidebar =() => {
     },[])
 
     const handleClick = () => {
+        navigate('/')
         logout()
     }
 

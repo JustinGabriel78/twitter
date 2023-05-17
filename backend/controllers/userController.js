@@ -90,7 +90,6 @@ const getUserData = async(req,res) => {
     try {
         const details = await User.findById(userId)
         const {username} = await User.findById(userId)
-        console.log("🚀 ~ file: userController.js:93 ~ getUserData ~ userDetails:", username)
         res.status(201).json({data: username, message: "user data fetched", sucess: true})
     } catch (error) {
         res.status(400).json({data: null, message: error.message, sucess: false})
