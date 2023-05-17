@@ -14,7 +14,7 @@ const Login = () => {
     }
     return (
         <div className="bg-[#00000066] w-full h-screen flex justify-center items-center">
-            <div className="bg-white w-2/5 h-3/4 rounded-lg ">
+            <div className="bg-white w-1/4 h-3/5 rounded-xl ">
                 <form onSubmit={handleSubmit} className="flex justify-center items-center flex-col relative">
                     <img src={ twitterLogo } alt="twitter logo" className="mt-4"/>
                     <h3 className="text-4xl font-semibold mt-10 Helvetica Neue font-Helvetica Neue">Sign in to Twitter</h3>

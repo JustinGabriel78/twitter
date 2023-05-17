@@ -16,7 +16,6 @@ const AllComments = () => {
     
     const {replys, dispatch} = useReplysContext();
 
-    console.log("🚀 ~ file: Comments.jsx:18 ~ AllComments ~ replys:", replys)
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get('http://localhost:4000/api/post/getComment',{
@@ -102,5 +101,6 @@ const AllComments = () => {
         </div>
     )
 }
+
 
 export default AllComments

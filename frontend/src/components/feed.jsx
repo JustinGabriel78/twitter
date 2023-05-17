@@ -54,7 +54,6 @@ const Feed = () => {
                 }
                 
             })
-            console.log("response.data: ",response.data)
             if(response.data.data) {
                 dispatch({type: 'CREATE_POSTS', payload: response.data.data })
             }

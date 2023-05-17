@@ -12,7 +12,6 @@ export const useLogin = () => {
         setError(null)
         try {
             const response = await axios.post('http://localhost:4000/api/user/login', {email, password });
-            console.log(response.data.token); // handle successful response
         
             // save the user to local storage
             localStorage.setItem('user', JSON.stringify(response.data.token))

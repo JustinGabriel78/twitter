@@ -6,6 +6,7 @@ import  Home from './pages/home'
 import Login from './pages/login'
 import Signup from './pages/signup';
 import AllComments from './pages/Comments';
+import Logout from './pages/logout';
 function App() {
   const { user } = useAuthContext();
   return (
@@ -24,6 +25,10 @@ function App() {
             <Route
               path="/signup"
               element={!user ? <Signup />: <Navigate to="/"/>  }
+            />
+            <Route
+              path="/logout"
+              element={<Logout/>}
             />
             <Route 
               path="/comments/:_id" 

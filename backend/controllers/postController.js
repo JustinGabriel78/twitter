@@ -72,7 +72,6 @@ const setComment = async(req,res) => {
         const updatedComments = await Post.findOneAndUpdate({_id:id},{$set: {comments: comments}},{new: true}) 
         const commentCount = updatedComments.comments.length;       
         const updatedCommentCount = await Post.findOneAndUpdate({_id:id},{$set: {commentCount}}, {new: true, sort: {createdAt: -1}}).select('comments')
-        console.log("🚀 ~ file: postController.js:75 ~ setComment ~ updatedCommentCount:", updatedCommentCount)
         res.status(201).json({data: updatedCommentCount, message: "Comment added sucessfully", sucess:true})
 
     } catch(error) {
@@ -107,7 +106,6 @@ const getIndividualPost = async(req,res) => {
 
 const setLike = async(req,res) => {
     const userId = req.userId;
-    console.log("🚀 ~ file: postController.js:110 ~ setLike ~ userId:", userId)
     const id = req.query._id
     try {
         const {likes} = await Post.findById(id).select("likes") 
@@ -115,10 +113,8 @@ const setLike = async(req,res) => {
         if(isLiked) {
             const likeIndex = likes.indexOf(isLiked)
             likes.splice(likeIndex,1)
-            console.log("🚀 ~ file: postController.js:113 ~ setLike ~ likes:", likes)
         } else {
             likes.push(userId)
-            console.log("🚀 ~ file: postController.js:113 ~ setLike ~ likes:", likes)
         }
 
         const updatedLikes =  await Post.findOneAndUpdate({_id:id},{$set: {likes}},{new: true}) 
