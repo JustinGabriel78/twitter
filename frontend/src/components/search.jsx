@@ -26,7 +26,7 @@ const Search = () => {
     useEffect(() => {
         const data = value&&mainData.filter(data => data.username.toLocaleLowerCase().includes(value))
         setFilteredData(data)
-    },[value, mainData])
+    },[value])
     
 
 

@@ -38,7 +38,7 @@ const AllComments = () => {
         }
 
         fetchData()
-    },[_id])
+    },[])
 
     useEffect(() => {
         const fetchData = async () => {

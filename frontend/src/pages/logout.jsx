@@ -8,10 +8,12 @@ import { useNavigate} from "react-router-dom";
 const Logout = () => {
     const { logout } = useLogout();
     const navigate = useNavigate();
+
     const handleClick = () => {
         navigate('/')
         logout()
     }
+    
     return(
         <div className="bg-neutral-500 w-full h-screen flex justify-center items-center">
             <div className="w-[350px] h-[390px] bg-white rounded-2xl">

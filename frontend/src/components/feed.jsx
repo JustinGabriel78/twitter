@@ -30,7 +30,7 @@ const Feed = () => {
         }
 
         fetchData()
-    },[dispatch])
+    },[])
 
 
     const postContentCondition = postContent ? false: true;

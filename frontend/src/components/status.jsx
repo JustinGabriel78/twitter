@@ -8,7 +8,6 @@ const Status = ({data}) => {
     const createdAtDate = new Date(createdAt);
     const date = createdAtDate.getDate();
     const monthName = createdAtDate.toLocaleString('default', { month: 'short' });
-    const userId =data.userId[0]._id;
     const [likeCount, setLikeCount] = useState(null);
 
     useEffect(() => {

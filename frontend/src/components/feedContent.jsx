@@ -36,7 +36,7 @@ const FeedContent = ({data}) => {
 
         }
         fetchData()
-    },[_id,userId])
+    },[_id])
 
     const handleLike = async() => {
         try {
