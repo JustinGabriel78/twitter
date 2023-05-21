@@ -24,16 +24,21 @@ const LeftSidebar =() => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:4000/api/user/getUserData',
-            {
-                headers: { 
-                    'Authorization': "Bearer " + JSON.parse(localStorage.getItem('user')),
+            try{
+                const response = await axios.get('http://localhost:4000/api/user/getUserData',
+                {
+                    headers: { 
+                        'Authorization': "Bearer " + JSON.parse(localStorage.getItem('user')),
+                    }
+                    
+                })
+                if (response.data.data) {                
+                    setUserData(response.data.data)
                 }
-                
-            })
-            if (response.data.data) {                
-                setUserData(response.data.data)
+            }catch(error){
+                console.error(error)
             }
+
         } 
         fetchData()  
     },[])
